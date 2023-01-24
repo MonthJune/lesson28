@@ -1,0 +1,12 @@
+.square {
+    width: 270px;
+    height: 270px;
+    background-color: rgba(255, 0,  0, 1);
+}
+.button {
+    display: inline-block;
+    width: 145px;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 1);
+    list-style-type: none;
+}
