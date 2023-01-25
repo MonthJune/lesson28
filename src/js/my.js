@@ -28,6 +28,7 @@ let d = ['Tom Marvolo Riddle', 'I am Lord Voldemort', 'Harry Potter'];
 function findUniq(arr) {
     let str = arr.join('').toLowerCase();
     let map = new Map();
+    let unicLettter;
 for (let i = 0; i < str.length; i++ ) {
     if (map.has(str[i])) {
         map.set(str[i], map.get(str[i]) + 1);
@@ -35,12 +36,21 @@ for (let i = 0; i < str.length; i++ ) {
      map.set(str[i], 0);
     }
 }
-    return map;
+for (let i of map) {
+    if (i[1] === 0) {
+        unicLettter = (i[0]);
+        break;
+    }    
+}
+    console.log(unicLettter);
+    return arr.find(i => { if (i.includes(unicLettter)) return i;});
 }
 
-console.log(findUniq(a));
-console.log(findUniq(b));
-console.log(findUniq(c));
-console.log(findUniq(d));
+let map = findUniq(c);
+console.log(map);
+
+//console.log(findUniq(b));
+//console.log(findUniq(c));
+//console.log(findUniq(d));
 
 
