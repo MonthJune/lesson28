@@ -36,21 +36,29 @@ for (let i = 0; i < str.length; i++ ) {
      map.set(str[i], 0);
     }
 }
-for (let i of map) {
+//console.log(map);
+/*for (let i of map) {
     if (i[1] === 0) {
         unicLettter = (i[0]);
         break;
     }    
-}
-    console.log(unicLettter);
-    return arr.find(i => { if (i.includes(unicLettter)) return i;});
+}*/
+        
+    for (let i of map) {
+        if ((arr.filter(j => j.toLowerCase().includes(i[0]))).length === 1) {
+        unicLettter = (i[0]);
+        break;
+        }
+    }
+    //console.log((arr.filter(j => j.toLowerCase().includes('b'))).length === 1);
+    //console.log(unicLettter);
+    return arr.find(i => { if ((i.toLowerCase().includes(unicLettter))) return i;});
 }
 
-let map = findUniq(c);
-console.log(map);
 
-//console.log(findUniq(b));
-//console.log(findUniq(c));
-//console.log(findUniq(d));
+console.log(findUniq(a));
+console.log(findUniq(b));
+console.log(findUniq(c));
+console.log(findUniq(d));
 
 
